@@ -6,10 +6,10 @@
 
 Para su ajuste posterior
 
-Delete the venv folder
-In the cmd if you are using windows, go to the project folder and type python -m venv venv (the last venv is the name of the virtual environment)
-You run the environment to start it using in windows and in the cmd venv\Scripts\active
-As there is already a requirements file, we only have to put the pip install django, then pip install pillow command with the environment activated.
-Done, now just fix the app by using python manage.py runserver 
+!Delete the venv folder
+!In the cmd if you are using windows, go to the project folder and type python -m venv venv (the last venv is the name of the virtual environment)
+!You run the environment to start it using in windows and in the cmd venv\Scripts\activate
+!As there is already a requirements file, we only have to put the pip install django, then pip install pillow command with the environment activated.
+!Done, now just fix the app by using python manage.py runserver 
 
 
