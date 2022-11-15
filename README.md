@@ -12,4 +12,5 @@ Para su ajuste posterior
 !As there is already a requirements file, we only have to put the pip install django, then pip install pillow command with the environment activated.
 !Done, now just fix the app by using python manage.py runserver 
 
+Link Pagina https://prueba-servicios.azurewebsites.net/
 
