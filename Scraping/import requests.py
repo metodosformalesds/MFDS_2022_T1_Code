@@ -1,14 +1,14 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
+path = 'C:/Users/chay9/OneDrive/Desktop/chromedriver.exe'
+options = webdriver.ChromeOptions()
+options.headless = True
 
-URL ='https://dallas.craigslist.org/search/sss?query=cars#search=1~gallery~0~0'
-s = Service('/Users/chay9/OneDrive/Desktop/chromedriver')
+driver = webdriver.Chrome(path)
+driver.get('https://ciudadjuarez.locanto.com.mx/Servicios/S/')
 
-driver = webdriver.Chrome(service=s)
-driver.get(URL)
-print()
-matches = driver.find_elements(By.CLASS_NAME, "gallery-card")
+servicios = driver.find_elements(By.XPATH,"//h3[@class='bp_ad__title']")
+print(servicios)
 
-print(matches)
+#Se selecciono otra pagina por complicaciones, esta ya esta tomando los diferentes titulos de las paginas
