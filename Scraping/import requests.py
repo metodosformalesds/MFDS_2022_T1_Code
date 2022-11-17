@@ -11,4 +11,4 @@ driver.get('https://ciudadjuarez.locanto.com.mx/Servicios/S/')
 servicios = driver.find_elements(By.XPATH,"//h3[@class='bp_ad__title']")
 print(servicios)
 
-#Se selecciono otra pagina por complicaciones, esta ya esta tomando los diferentes titulos de las paginas
+#Se selecciono otra pagina por complicaciones, esta ya esta tomando los diferentes titulos de los servicios
