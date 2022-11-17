@@ -10,12 +10,10 @@ options.headless = True
 driver = webdriver.Chrome(path)
 driver.get('https://ciudadjuarez.locanto.com.mx/Autos/902/')
 
-entradas = driver.find_elements(By.XPATH, "//div[@class='entries']")
+servicios = driver.find_elements(By.XPATH,"//h3[@class='bp_ad__title']")
+servicios = [ serv.text for serv in servicios ]
+print(servicios)
 
-for ent in entradas:
-    servicios = driver.find_element(By.XPATH,"//h3[@class='bp_ad__title']")
-    print('\n\n')
-    print(servicios.text)
+#price //div[@class='bp_ad__price']
+#Information //a[@class='bp_ad__desc_link']
 
-
-#Se selecciono otra pagina por complicaciones, esta ya esta tomando los diferentes titulos de los servicios
