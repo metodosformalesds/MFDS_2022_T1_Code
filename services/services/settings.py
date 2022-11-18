@@ -133,9 +133,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static','staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'services/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -156,10 +156,13 @@ MESSAGE_TAGS = {
 
 #Enviar corre
 
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_PORT = 465
 EMAIL_HOST_USER = 'diamondsoftwaresolutions4@gmail.com'
 EMAIL_HOST_PASSWORD = 'chulnsffogixyguq'
+#'veiquwqrpwwrbndt'
 EMAIL_USE_TLS = True
 
 
@@ -181,38 +184,17 @@ SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
             'profile',
-            'email'
+            'email',
         ],
         'AUTH_PARAMS': {
             'access_type': 'online',
         },
         'OAUTH_PKCE_ENABLED': True,
-    },
-    'facebook': {
-        'METHOD': 'oauth2',
-        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
-        'SCOPE': ['email', 'public_profile'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'INIT_PARAMS': {'cookie': True},
-        'FIELDS': [
-            'id',
-            'first_name',
-            'last_name',
-            'middle_name',
-            'name',
-            'name_format',
-            'picture',
-            'short_name'
-        ],
-        'EXCHANGE_TOKEN': True,
-        # 'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v7.0',
     }
 }
 
 LOGIN_REDIRECT_URL = 'index'
-LOGIN_REDIRECT_URL = 'login'
+#LOGIN_REDIRECT_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #{% provider_login_url provider.id openid=brand.openid_url process=process %}
 #{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}
@@ -220,9 +202,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #http://127.0.0.1:8000/google/login/callback/
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account:login'
 
 ACCOUNT_EMAIL_REQUIRED = True
 

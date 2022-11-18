@@ -1,8 +1,5 @@
-# MFDS_2022_T1_Code
-
-
-
-
+# Services-project
+Project about listing services, filtering, using a recommendation system.
 *for developers 
 
  1-Delete the venv folder
@@ -16,4 +13,3 @@
  5-Done, now just fix the app by using python manage.py runserver 
 
 Link Pagina https://prueba-servicios.azurewebsites.net/
-
