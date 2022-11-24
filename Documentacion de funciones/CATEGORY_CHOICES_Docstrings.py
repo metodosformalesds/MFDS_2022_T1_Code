@@ -6,3 +6,5 @@ Category choices es una tupla que contiene tuplas de dos elementos, el primero e
 esta tupla es utilizada para crear un campo de tipo ChoiceField en el formulario de creacion de anuncios en la parte de categorias,
 este campo es utilizado para que el usuario seleccione la categoria de su anuncio y no pueda pasar un valor que no este en la tupla
 """
+
+#tupla hecha por Antonio Hernandez
