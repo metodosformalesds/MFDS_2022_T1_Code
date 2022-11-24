@@ -13,3 +13,5 @@ Project about listing services, filtering, using a recommendation system.
  5-Done, now just fix the app by using python manage.py runserver 
 
 Link Pagina https://prueba-servicios.azurewebsites.net/
+
+Repositorio de pruebas: https://github.com/Antonio180233/Services-project
