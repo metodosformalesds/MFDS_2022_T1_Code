@@ -1,4 +1,5 @@
 #Models
+#Funciones creadas por Alexis Garcia
 
 class userManager(BaseUserManager):
     """
